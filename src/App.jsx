@@ -621,7 +621,23 @@ export default function App() {
                         labels: Object.keys(categoryTotals),
                         datasets: [
                           {
-                            data: Object.values(categoryTotals)
+                            data: Object.values(categoryTotals),
+                            backgroundColor: [
+                              "#6366f1",
+                              "#06b6d4",
+                              "#f59e0b",
+                              "#ef4444",
+                              "#10b981",
+                              "#8b5cf6",
+                              "#ec4899",
+                              "#14b8a6",
+                              "#f97316",
+                              "#64748b",
+                              "#84cc16"
+                            ],
+                            borderColor: dark ? "#1e293b" : "#ffffff",
+                            borderWidth: 3,
+                            hoverOffset: 10
                           }
                         ]
                       }}
@@ -904,11 +920,21 @@ export default function App() {
                     datasets: [
                       {
                         label: "Income",
-                        data: months.map((m) => monthly[m].income)
+                        data: months.map((m) => monthly[m].income),
+                        backgroundColor: "rgba(16, 185, 129, 0.8)",
+                        borderColor: "#10b981",
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        maxBarThickness: 60
                       },
                       {
                         label: "Expenses",
-                        data: months.map((m) => monthly[m].expense)
+                        data: months.map((m) => monthly[m].expense),
+                        backgroundColor: "rgba(239, 68, 68, 0.8)",
+                        borderColor: "#ef4444",
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        maxBarThickness: 60
                       }
                     ]
                   }}
