@@ -601,15 +601,42 @@ import "./components/Auth.css";
                               labels: Object.keys(categoryTotals),
                               datasets: [
                                 {
-                                  data: Object.values(categoryTotals)
+                                  label: "Expenses",
+                                  data: Object.values(categoryTotals),
+                                  backgroundColor: [
+                                    "#6366F1",
+                                    "#06B6D4",
+                                    "#F59E0B",
+                                    "#EC4899",
+                                    "#10B981",
+                                    "#8B5CF6",
+                                    "#EF4444",
+                                    "#3B82F6",
+                                    "#F97316",
+                                    "#14B8A6",
+                                    "#A855F7"
+                                  ],
+                                  borderColor: dark ? "#1e293b" : "#ffffff",
+                                  borderWidth: 3,
+                                  hoverOffset: 15,
+                                  borderRadius: 5,
+                                  spacing: 3
                                 }
                               ]
                             }}
                             options={{
                               responsive: true,
                               maintainAspectRatio: false,
+                              cutout: "65%",
                               plugins: {
-                                legend: { position: "bottom" }
+                                legend: {
+                                  position: "bottom",
+                                  labels: {
+                                    color: dark ? "#ffffff" : "#334155",
+                                    usePointStyle: true,
+                                    padding: 15
+                                  }
+                                }
                               }
                             }}
                           />
@@ -884,11 +911,21 @@ import "./components/Auth.css";
                           datasets: [
                             {
                               label: "Income",
-                              data: months.map((m) => monthly[m].income)
+                              data: months.map((m) => monthly[m].income),
+                              backgroundColor: "#10B981",
+                              hoverBackgroundColor: "#059669",
+                              borderRadius: 8,
+                              borderSkipped: false,
+                              maxBarThickness: 60
                             },
                             {
                               label: "Expenses",
-                              data: months.map((m) => monthly[m].expense)
+                              data: months.map((m) => monthly[m].expense),
+                              backgroundColor: "#F43F5E",
+                              hoverBackgroundColor: "#E11D48",
+                              borderRadius: 8,
+                              borderSkipped: false,
+                              maxBarThickness: 60
                             }
                           ]
                         }}
